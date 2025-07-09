@@ -1,7 +1,7 @@
 {
-  "name": "chai-backend",
+  "name": "backend-node",
   "version": "1.0.0",
-  "description": "a backend at chai aur code channel - youtube",
+  "description": "Backend NODE",
   "type": "module",
   "main": "index.js",
   "scripts": {
@@ -10,9 +10,9 @@
   "keywords": [
     "javascript",
     "backend",
-    "chai"
+    "Alvi"
   ],
-  "author": "Hitesh Choudhary",
+  "author": "Suhail Alvi",
   "license": "ISC",
   "devDependencies": {
     "nodemon": "^3.0.1",
