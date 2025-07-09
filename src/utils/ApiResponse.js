@@ -8,7 +8,3 @@ class ApiResponse {
 }
 
 export { ApiResponse }
-
-//Structure of the response object
-//this is the structure of the response object that will be sent to the client
-//response aise hi jayega OK! Structure Follow karega
