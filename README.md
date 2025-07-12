@@ -18,7 +18,10 @@ A scalable and modular Youtube Plateform built using **Node.js**, **Express**, a
 
 ---
 
-## 📁 Project Structure
+### 📁 Project Structure
+
+<details>
+<summary><strong>Click to expand the folder structure</strong></summary>
 
 project-root/
 ├── public/
@@ -72,6 +75,8 @@ project-root/
 ├── package-lock.json
 └── README.md
 
+
+</details>
 
 ---
 
