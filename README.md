@@ -129,13 +129,11 @@ Contributions are welcome! Please follow these steps:
 4.  Push your changes to your fork.
 5.  Submit a pull request.
 
-## 📝 License
-
-[MIT](LICENSE)
+## 📝 License Free
 
 ## 📬 Contact
 
-[Your Name](your.email@example.com)
+[Suhail-Alvi](alvisuhail400.@gmail.com)
 
 ## 💖 Thanks
 
