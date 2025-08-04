@@ -1,201 +1,144 @@
-# 🎬 More Then Youtube Like Plateform with Professional Industry Approach
+# VideoTube Backend API ▶YouTube
 
-A scalable and modular Youtube Plateform built using **Node.js**, **Express**, and **MongoDB** (Mongoose ORM), supporting JWT authentication, file uploads, subscriptions, playlists, comments, and more.
+A RESTful API for a video-sharing platform, providing user authentication, video management, and other core functionalities. This project aims to provide a robust backend for applications like YouTube, Vimeo, or Dailymotion. It handles user accounts, manages video uploads, and provides endpoints for interacting with video content.
 
----
+## 🚀 Key Features
 
-## 🔧 Tech Stack
+- **User Authentication:** Secure user registration, login, and logout using JWT tokens.
+- **Profile Management:** Users can update their profile details, avatar, and cover image.
+- **Video Management:** (Future Implementation) API endpoints for uploading, updating, and deleting videos.
+- **Watch History:** Track users' watch history.
+- **Token Refresh:** Implements refresh token rotation for enhanced security.
+- **Password Management:** Allows users to change their passwords securely.
+- **Channel Profiles:** Retrieve user channel profiles.
+- **Secure API:** Protected routes using JWT verification.
+- **Standardized Responses:** Consistent API responses using the `ApiResponse` utility.
+- **Error Handling:** Centralized error handling using the `ApiError` and `asyncHandler` utilities.
 
-- **Node.js** – Server-side runtime
-- **Express.js** – Web framework for routing & middleware
-- **MongoDB** – NoSQL database
-- **Mongoose** – MongoDB ODM
-- **JWT** – Authentication and authorization
-- **Multer** – File uploads
-- **Cloudinary** – Cloud media storage
-- **Dotenv** – Manage environment variables
-- **Other utilities** – Custom error handling, async wrappers, etc.
+## 🛠️ Tech Stack
 
----
+- **Backend:** Node.js, Express.js
+- **Database:** MongoDB with Mongoose
+- **Authentication:** JWT (JSON Web Tokens), Cookie-parser
+- **Password Hashing:** bcrypt
+- **Cloud Storage:** Cloudinary
+- **Middleware:** cors
+- **Environment Variables:** dotenv
+- **Build Tools:** N/A
+- **Other:** N/A
 
-### 📁 Project Structure
+## 📦 Getting Started
 
-<details>
-<summary><strong>Click to expand the folder structure</strong></summary>
+Follow these instructions to set up the project locally.
 
-project-root/
-├── public/
-├── src/
-│ ├── controllers/
-│ │ ├── comment.controller.js
-│ │ ├── dashboard.controller.js
-│ │ ├── healthcheck.controller.js
-│ │ ├── like.controller.js
-│ │ ├── playlist.controller.js
-│ │ ├── subscription.controller.js
-│ │ ├── tweet.controller.js
-│ │ ├── user.controller.js
-│ │ └── video.controller.js
-│ ├── db/
-│ │ └── index.js
-│ ├── middlewares/
-│ │ ├── auth.middleware.js
-│ │ └── multer.middleware.js
-│ ├── models/
-│ │ ├── comment.model.js
-│ │ ├── like.model.js
-│ │ ├── playlist.model.js
-│ │ ├── subscription.model.js
-│ │ ├── tweet.model.js
-│ │ ├── user.model.js
-│ │ └── video.model.js
-│ ├── routes/
-│ │ ├── comment.routes.js
-│ │ ├── dashboard.routes.js
-│ │ ├── healthcheck.routes.js
-│ │ ├── like.routes.js
-│ │ ├── playlist.routes.js
-│ │ ├── subscription.routes.js
-│ │ ├── tweet.routes.js
-│ │ ├── user.routes.js
-│ │ └── video.routes.js
-│ └── utils/
-│ ├── ApiError.js
-│ ├── ApiResponse.js
-│ ├── asyncHandler.js
-│ └── cloudinary.js
-├── app.js
-├── constants.js
-├── index.js
-├── .env.sample
-├── .gitignore
-├── .prettierignore
-├── .prettierrc
-├── package.json
-├── package-lock.json
-└── README.md
+### Prerequisites
 
+- Node.js (v18 or higher)
+- npm (v6 or higher) or yarn
+- MongoDB installed and running
+- Cloudinary account for image storage
 
-</details>
+### Installation
 
----
+1.  Clone the repository:
 
-## 🧠 Application Flow
+    ```bash
+    git clone <repository-url>
+    ```
 
-### 1. **Entry Point**
-- `index.js` starts the application by connecting to MongoDB and running `app.js`.
+2.  Navigate to the project directory:
 
-### 2. **Application Setup**
-- `app.js` configures Express middleware:
-  - JSON parsing
-  - CORS setup
-  - Static file serving
-  - Global error handling
-  - Route mounting (`/api/v1/...`)
+    ```bash
+    cd <project-directory>
+    ```
 
-### 3. **Database Connection**
-- `src/db/index.js` connects to MongoDB using `mongoose.connect()`.
+3.  Install dependencies:
 
-### 4. **Routes**
-- All API endpoints are organized in `src/routes/` and grouped by feature:
-  - `/users` → Register, login, profile
-  - `/videos` → Upload, fetch, like, comment
-  - `/playlists`, `/subscriptions`, `/tweets` etc.
+    ```bash
+    npm install
+    # or
+    yarn install
+    ```
 
-### 5. **Controllers**
-- Each route has a corresponding controller in `src/controllers/`, where the core business logic resides.
+4.  Create a `.env` file in the root directory and configure the following environment variables:
 
-### 6. **Models**
-- Mongoose models are defined in `src/models/` for schema validation and database interactions.
+    ```
+    MONGODB_URI=<your_mongodb_connection_string>
+    PORT=8000
+    CORS_ORIGIN=<your_frontend_url>
+    ACCESS_TOKEN_SECRET=<your_access_token_secret>
+    REFRESH_TOKEN_SECRET=<your_refresh_token_secret>
+    CLOUDINARY_CLOUD_NAME=<your_cloudinary_cloud_name>
+    CLOUDINARY_API_KEY=<your_cloudinary_api_key>
+    CLOUDINARY_API_SECRET=<your_cloudinary_api_secret>
+    ```
 
-### 7. **Middlewares**
-- `auth.middleware.js` → Protects routes using JWT
-- `multer.middleware.js` → Handles file uploads (like profile photos, videos)
+### Running Locally
 
-### 8. **Utils**
-- `ApiError.js` → Custom error class
-- `ApiResponse.js` → Uniform success response
-- `asyncHandler.js` → Wraps async routes to catch errors
-- `cloudinary.js` → Configures Cloudinary for image/video uploads
+1.  Start the server:
 
----
+    ```bash
+    npm run dev
+    # or
+    yarn dev
+    ```
 
-## 🔐 Authentication Flow (JWT)
+2.  The server will start on the port specified in the `.env` file (or port 8000 if not specified).
 
-1. **Register/Login** → `/api/v1/users/register` or `/login`
-2. Backend generates a **JWT token** and sends it in response.
-3. Protected routes use `auth.middleware.js` to verify JWT:
-   - If valid: proceed.
-   - If invalid: return `401 Unauthorized`.
+## 📂 Project Structure
 
----
+```
+├── .env                  # Environment variables configuration
+├── .gitignore            # Specifies intentionally untracked files that Git should ignore
+├── README.md             # Project documentation
+├── package-lock.json     # Records the exact versions of dependencies
+├── package.json          # Project metadata and dependencies
+├── src
+│   ├── app.js              # Express application configuration
+│   ├── constants.js        # Constant values
+│   ├── controllers         # Contains route handler logic
+│   │   └── user.controller.js
+│   ├── db                  # Database connection setup
+│   │   └── index.js
+│   ├── index.js            # Main entry point of the application
+│   ├── middlewares         # Custom middleware functions
+│   │   └── auth.middleware.js
+│   │   └── multer.middleware.js
+│   ├── models              # Database models
+│   │   └── user.model.js
+│   ├── routes              # API route definitions
+│   │   └── user.routes.js
+│   ├── utils               # Utility functions
+│   │   ├── ApiError.js
+│   │   ├── ApiResponse.js
+│   │   ├── asyncHandler.js
+│   │   └── cloudinary.js
+```
 
-## ⚙️ Environment Variables
+## 📸 Screenshots
 
-Copy `.env.sample` into `.env` and fill in your values:
+(Add screenshots of your application here to showcase its features)
 
-PORT=8000
-MONGODB_URI=mongodb+srv://username:password@cluster.mongodb.net/dbname
-JWT_SECRET=your_jwt_secret
-CLOUDINARY_CLOUD_NAME=your_cloud_name
-CLOUDINARY_API_KEY=your_key
-CLOUDINARY_API_SECRET=your_secret
+## 🤝 Contributing
 
+Contributions are welcome! Please follow these steps:
 
+1.  Fork the repository.
+2.  Create a new branch for your feature or bug fix.
+3.  Make your changes and commit them with descriptive messages.
+4.  Push your changes to your fork.
+5.  Submit a pull request.
 
----
+## 📝 License
 
-## 🚀 Run the Project
+[MIT](LICENSE)
 
-### 1. Install dependencies
-```bash
-npm install
+## 📬 Contact
 
-cp .env.sample .env
-# Edit .env with your credentials
+[Your Name](your.email@example.com)
 
-npm run dev     # using nodemon
-# or
-node index.js
+## 💖 Thanks
 
-✅ Features
-🧩 Modular MVC structure
+Thanks for checking out this project! We hope it's helpful.
 
-🛡️ JWT-based auth with protected routes
-
-📁 File uploads via multer
-
-☁️ Cloudinary integration
-
-🧠 MongoDB schema modeling with Mongoose
-
-💬 Full social flow: videos, likes, comments, subscriptions
-
-🔁 Global error + async handler
-
----
-
-📬 API Endpoints Overview
-
-| Method | Route                    | Description       |
-| ------ | ------------------------ | ----------------- |
-| POST   | `/api/v1/users/register` | Register new user |
-| POST   | `/api/v1/users/login`    | Login user        |
-| POST   | `/api/v1/videos`         | Upload video      |
-| GET    | `/api/v1/videos/:id`     | Get video by ID   |
-| POST   | `/api/v1/comments`       | Add comment       |
-| POST   | `/api/v1/likes`          | Like a video      |
-| GET    | `/api/v1/playlists`      | User playlists    |
-| GET    | `/healthcheck`           | App status check  |
-
-🧹 Formatting & Standards
-Code formatted using Prettier
-
-Configurable via .prettierrc and .prettierignore
-
-📄 License
-MIT – feel free to use and modify.
-
-👨‍💻 Author
-Made with 💻 by Suhail Alvi
-📧 Email: alvisuhail400@.com
+Made by Suhail by ❤️
