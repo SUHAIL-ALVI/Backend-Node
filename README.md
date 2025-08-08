@@ -1,4 +1,4 @@
-# VideoTube Backend API ▶YouTube
+# VideoTube Backend API ▶YouTube 
 
 A RESTful API for a video-sharing platform, providing user authentication, video management, and other core functionalities. This project aims to provide a robust backend for applications like YouTube, Vimeo, or Dailymotion. It handles user accounts, manages video uploads, and provides endpoints for interacting with video content.
 
