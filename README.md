@@ -139,4 +139,4 @@ Contributions are welcome! Please follow these steps:
 
 Thanks for checking out this project! We hope it's helpful.
 
-Made by Suhail by ❤️
+Made by Suhail with ❤️
