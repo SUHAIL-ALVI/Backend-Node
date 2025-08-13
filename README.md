@@ -137,6 +137,6 @@ Contributions are welcome! Please follow these steps:
 
 ## 💖 Thanks
 
-Thanks for checking out this project! We hope it's helpful.
+Thanks for checking out this project! 
 
 Made by Suhail with ❤️
