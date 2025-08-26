@@ -6,7 +6,7 @@ A RESTful API for a video-sharing platform, providing user authentication, video
 
 - **User Authentication:** Secure user registration, login, and logout using JWT tokens.
 - **Profile Management:** Users can update their profile details, avatar, and cover image.
-- **Video Management:** (Future Implementation) API endpoints for uploading, updating, and deleting videos.
+- **Video Management:** (Future Implementation) API endpoints for uploading, updating, and deleting videos
 - **Watch History:** Track users' watch history.
 - **Token Refresh:** Implements refresh token rotation for enhanced security.
 - **Password Management:** Allows users to change their passwords securely.
